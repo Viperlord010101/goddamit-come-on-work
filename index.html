@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ultraviolet Proxy — Clone</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <div class="uv-app">
+    <header class="uv-header">
+      <h1>Ultraviolet</h1>
+      <div class="controls">
+        <input id="url" placeholder="https://example.com" />
+        <label class="toggle">
+          <input id="useIframe" type="checkbox">
+          <span>Load in iframe</span>
+        </label>
+        <button id="go">Go</button>
+        <button id="openNew">Open new tab</button>
+      </div>
+    </header>
+
+    <main class="uv-main">
+      <div id="canvas-wrap">
+        <canvas id="uv-canvas"></canvas>
+      </div>
+
+      <div id="viewer">
+        <!-- iframe loads here if selected -->
+        <iframe id="proxyFrame" sandbox="allow-scripts allow-forms allow-same-origin" style="display:none;"></iframe>
+        <div id="status" class="status">Enter a URL and press Go.</div>
+      </div>
+
+      <aside class="history">
+        <h3>History</h3>
+        <ul id="historyList"></ul>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/public/script.js"></script>
+</body>
+</html>
